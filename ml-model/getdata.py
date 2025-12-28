@@ -20,7 +20,7 @@ def get_new_access_token():
     response = requests.post(url, data=payload).json()
     return response['access_token']
 
-def fetch_all_rides():
+def fetch_all_activities():
     access_token = get_new_access_token()
     headers = {'Authorization': f'Bearer {access_token}'}
     activities = []
@@ -29,24 +29,25 @@ def fetch_all_rides():
     while True:
         url = f"https://www.strava.com/api/v3/athlete/activities?page={page}&per_page=100"
         r = requests.get(url, headers=headers).json()
-        if not r or 'message' in r: # Handle empty pages or errors
+        if not r or (isinstance(r, dict) and 'message' in r): 
             break
         activities.extend(r)
         page += 1
         print(f"Fetched page {page-1}...")
         
-    df = pd.DataFrame(activities)
-    if not df.empty:
-        df = df[df['type'] == 'Ride']
-    return df
+    return pd.DataFrame(activities)
 
 if __name__ == "__main__":
-    rides_df = fetch_all_rides()
+    all_activities_df = fetch_all_activities()
     
-    if rides_df.empty:
-        print("No rides found!")
+    if all_activities_df.empty:
+        print("No activities found!")
     else:
-        rides_df.to_csv('all_strava_bike_data.csv', index=False)
+        all_activities_df.to_csv('ml-model/strava_data.csv', index=False)
+        print(f"Exported all activities to ml-model/strava_data.csv")
+
+        rides_df = all_activities_df[all_activities_df['type'] == 'Ride']
+        rides_df.to_csv('ml-model/all_strava_bike_data.csv', index=False)
         
-        print(f"Success! Exported {len(rides_df)} rides to 'all_strava_bike_data.csv'")
-        print("Available columns for your ML model:", rides_df.columns.tolist())
+        print(f"Exported {len(rides_df)} activities to ml-model/all_strava_bike_data.csv")
+        print("Available columns:", all_activities_df.columns.tolist())
