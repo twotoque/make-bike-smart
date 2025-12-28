@@ -1,4 +1,0 @@
-[wokwi]
-version = 1
-elf = "target/xtensa-esp32-espidf/debug/make-bike-smart"
-firmware = "target/xtensa-esp32-espidf/debug/make-bike-smart.bin"

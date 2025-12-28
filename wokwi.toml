@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'build/MyPicoProject.ino.bin'
+elf = 'build/MyPicoProject.ino.elf'
