@@ -1,22 +1,21 @@
 [package]
-name = "make-bike-smart"
+name = "esp32-hall-servo"
 version = "0.1.0"
 authors = ["Derek Song"]
 edition = "2021"
 license = "MIT OR Apache-2.0"
 
 [dependencies]
-esp-hal = { version = "0.20.1", features = ["esp32"] }
-esp-backtrace = { version = "0.14.1", features = [
+esp-hal = { version = "0.20", features = ["esp32"] }
+esp-backtrace = { version = "0.14", features = [
     "esp32",
     "exception-handler",
     "panic-handler",
     "println",
 ] }
-esp-println = { version = "0.11.0", features = ["esp32", "log"] }
+esp-println = { version = "0.11", features = ["esp32"] }
 
 [profile.dev]
-# Rust debug is too slow, use release profiles with debug info
 opt-level = "z"
 debug = true
 lto = false
@@ -26,3 +25,4 @@ opt-level = "z"
 debug = false
 lto = "fat"
 strip = true
+codegen-units = 1

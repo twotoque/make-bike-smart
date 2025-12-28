@@ -18,7 +18,6 @@ use esp_hal::{
     },
 };
 
-
 #[entry]
 fn main() -> ! {
 
@@ -32,4 +31,18 @@ fn main() -> ! {
 
     // creates delay timer by reading clock config (keeps ownership to clocks)
     let mut delay = Delay::new(&clocks);
+
+    let io = Io::new(peripherals.GPIO, peripherals.IO_MUX);
+
+
+    // -- input
+    // hall effect sensor input (GPIO 4)
+    let hall_sensor = Input::new(io.pins.gpio4, Pull::Up);
+
+    // -- output
+    // status LED (GPIO 2)
+    let mut led = Output::new(io.pins.gpio2, Level::Low);
+
+
 }
+
