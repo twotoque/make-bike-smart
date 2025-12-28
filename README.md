@@ -1,0 +1,1 @@
+A side project to experiment with Rust and its relations with an ESP32 microcontroller with the hope to make my bike smarter (resistance depending on my past Strava rides and map geography)! 
