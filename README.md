@@ -8,7 +8,7 @@ A side project to experiment with C++, its interactions with a machine learning 
 Traditional stationary bikes, specifically models like my **ProForm 505 SPX**, rely on a manual tension knob that requires constant human intervention to adjust workout intensity. This creates a disconnected training experience where the resistance does not respond to the rider's actual fatigue levels, specific training goals such as HIIT or endurance, as well as past Strava rides. 
 
 
-![Bike Magnet](./magneticdiameter.png)
+![Bike Magnet](./magneticdiameter.jpg)
 
 This tool aims to solve that by using an external motor to resist the flywheel. Despite the bike having data like wattage, we infered running data as well as past running data to get distance via a magnetic Hall effect sensor that tracks every rotation of the 36.5 cm diameter flywheel. By combining this data with a neural betwork trained on historical Strava erformance, the system eliminates the need for manual adjustments and provides a fully automated, data-driven cycling experience.
 
