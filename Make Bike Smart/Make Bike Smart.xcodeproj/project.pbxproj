@@ -1,0 +1,621 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ACD4A22C2F021C1B000ED2A9 /* Make_Bike_SmartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD4A22B2F021C1B000ED2A9 /* Make_Bike_SmartApp.swift */; };
+		ACD4A22E2F021C1B000ED2A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD4A22D2F021C1B000ED2A9 /* ContentView.swift */; };
+		ACD4A2302F021C1C000ED2A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD4A22F2F021C1C000ED2A9 /* Assets.xcassets */; };
+		ACD4A2342F021C1C000ED2A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD4A2332F021C1C000ED2A9 /* Preview Assets.xcassets */; };
+		ACD4A23E2F021C1C000ED2A9 /* Make_Bike_SmartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD4A23D2F021C1C000ED2A9 /* Make_Bike_SmartTests.swift */; };
+		ACD4A2482F021C1C000ED2A9 /* Make_Bike_SmartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD4A2472F021C1C000ED2A9 /* Make_Bike_SmartUITests.swift */; };
+		ACD4A24A2F021C1C000ED2A9 /* Make_Bike_SmartUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD4A2492F021C1C000ED2A9 /* Make_Bike_SmartUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ACD4A23A2F021C1C000ED2A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACD4A2202F021C1B000ED2A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACD4A2272F021C1B000ED2A9;
+			remoteInfo = "Make Bike Smart";
+		};
+		ACD4A2442F021C1C000ED2A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACD4A2202F021C1B000ED2A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACD4A2272F021C1B000ED2A9;
+			remoteInfo = "Make Bike Smart";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ACD4A2282F021C1B000ED2A9 /* Make Bike Smart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Make Bike Smart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACD4A22B2F021C1B000ED2A9 /* Make_Bike_SmartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Make_Bike_SmartApp.swift; sourceTree = "<group>"; };
+		ACD4A22D2F021C1B000ED2A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ACD4A22F2F021C1C000ED2A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ACD4A2312F021C1C000ED2A9 /* Make_Bike_Smart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Make_Bike_Smart.entitlements; sourceTree = "<group>"; };
+		ACD4A2332F021C1C000ED2A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ACD4A2392F021C1C000ED2A9 /* Make Bike SmartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Make Bike SmartTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACD4A23D2F021C1C000ED2A9 /* Make_Bike_SmartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Make_Bike_SmartTests.swift; sourceTree = "<group>"; };
+		ACD4A2432F021C1C000ED2A9 /* Make Bike SmartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Make Bike SmartUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACD4A2472F021C1C000ED2A9 /* Make_Bike_SmartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Make_Bike_SmartUITests.swift; sourceTree = "<group>"; };
+		ACD4A2492F021C1C000ED2A9 /* Make_Bike_SmartUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Make_Bike_SmartUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACD4A2252F021C1B000ED2A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACD4A2362F021C1C000ED2A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACD4A2402F021C1C000ED2A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ACD4A21F2F021C1B000ED2A9 = {
+			isa = PBXGroup;
+			children = (
+				ACD4A22A2F021C1B000ED2A9 /* Make Bike Smart */,
+				ACD4A23C2F021C1C000ED2A9 /* Make Bike SmartTests */,
+				ACD4A2462F021C1C000ED2A9 /* Make Bike SmartUITests */,
+				ACD4A2292F021C1B000ED2A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ACD4A2292F021C1B000ED2A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACD4A2282F021C1B000ED2A9 /* Make Bike Smart.app */,
+				ACD4A2392F021C1C000ED2A9 /* Make Bike SmartTests.xctest */,
+				ACD4A2432F021C1C000ED2A9 /* Make Bike SmartUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACD4A22A2F021C1B000ED2A9 /* Make Bike Smart */ = {
+			isa = PBXGroup;
+			children = (
+				ACD4A22B2F021C1B000ED2A9 /* Make_Bike_SmartApp.swift */,
+				ACD4A22D2F021C1B000ED2A9 /* ContentView.swift */,
+				ACD4A22F2F021C1C000ED2A9 /* Assets.xcassets */,
+				ACD4A2312F021C1C000ED2A9 /* Make_Bike_Smart.entitlements */,
+				ACD4A2322F021C1C000ED2A9 /* Preview Content */,
+			);
+			path = "Make Bike Smart";
+			sourceTree = "<group>";
+		};
+		ACD4A2322F021C1C000ED2A9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				ACD4A2332F021C1C000ED2A9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ACD4A23C2F021C1C000ED2A9 /* Make Bike SmartTests */ = {
+			isa = PBXGroup;
+			children = (
+				ACD4A23D2F021C1C000ED2A9 /* Make_Bike_SmartTests.swift */,
+			);
+			path = "Make Bike SmartTests";
+			sourceTree = "<group>";
+		};
+		ACD4A2462F021C1C000ED2A9 /* Make Bike SmartUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ACD4A2472F021C1C000ED2A9 /* Make_Bike_SmartUITests.swift */,
+				ACD4A2492F021C1C000ED2A9 /* Make_Bike_SmartUITestsLaunchTests.swift */,
+			);
+			path = "Make Bike SmartUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACD4A2272F021C1B000ED2A9 /* Make Bike Smart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACD4A24D2F021C1C000ED2A9 /* Build configuration list for PBXNativeTarget "Make Bike Smart" */;
+			buildPhases = (
+				ACD4A2242F021C1B000ED2A9 /* Sources */,
+				ACD4A2252F021C1B000ED2A9 /* Frameworks */,
+				ACD4A2262F021C1B000ED2A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Make Bike Smart";
+			productName = "Make Bike Smart";
+			productReference = ACD4A2282F021C1B000ED2A9 /* Make Bike Smart.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ACD4A2382F021C1C000ED2A9 /* Make Bike SmartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACD4A2502F021C1C000ED2A9 /* Build configuration list for PBXNativeTarget "Make Bike SmartTests" */;
+			buildPhases = (
+				ACD4A2352F021C1C000ED2A9 /* Sources */,
+				ACD4A2362F021C1C000ED2A9 /* Frameworks */,
+				ACD4A2372F021C1C000ED2A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACD4A23B2F021C1C000ED2A9 /* PBXTargetDependency */,
+			);
+			name = "Make Bike SmartTests";
+			productName = "Make Bike SmartTests";
+			productReference = ACD4A2392F021C1C000ED2A9 /* Make Bike SmartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ACD4A2422F021C1C000ED2A9 /* Make Bike SmartUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACD4A2532F021C1C000ED2A9 /* Build configuration list for PBXNativeTarget "Make Bike SmartUITests" */;
+			buildPhases = (
+				ACD4A23F2F021C1C000ED2A9 /* Sources */,
+				ACD4A2402F021C1C000ED2A9 /* Frameworks */,
+				ACD4A2412F021C1C000ED2A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACD4A2452F021C1C000ED2A9 /* PBXTargetDependency */,
+			);
+			name = "Make Bike SmartUITests";
+			productName = "Make Bike SmartUITests";
+			productReference = ACD4A2432F021C1C000ED2A9 /* Make Bike SmartUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ACD4A2202F021C1B000ED2A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					ACD4A2272F021C1B000ED2A9 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					ACD4A2382F021C1C000ED2A9 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = ACD4A2272F021C1B000ED2A9;
+					};
+					ACD4A2422F021C1C000ED2A9 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = ACD4A2272F021C1B000ED2A9;
+					};
+				};
+			};
+			buildConfigurationList = ACD4A2232F021C1B000ED2A9 /* Build configuration list for PBXProject "Make Bike Smart" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ACD4A21F2F021C1B000ED2A9;
+			productRefGroup = ACD4A2292F021C1B000ED2A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACD4A2272F021C1B000ED2A9 /* Make Bike Smart */,
+				ACD4A2382F021C1C000ED2A9 /* Make Bike SmartTests */,
+				ACD4A2422F021C1C000ED2A9 /* Make Bike SmartUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ACD4A2262F021C1B000ED2A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD4A2342F021C1C000ED2A9 /* Preview Assets.xcassets in Resources */,
+				ACD4A2302F021C1C000ED2A9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACD4A2372F021C1C000ED2A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACD4A2412F021C1C000ED2A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACD4A2242F021C1B000ED2A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD4A22E2F021C1B000ED2A9 /* ContentView.swift in Sources */,
+				ACD4A22C2F021C1B000ED2A9 /* Make_Bike_SmartApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACD4A2352F021C1C000ED2A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD4A23E2F021C1C000ED2A9 /* Make_Bike_SmartTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACD4A23F2F021C1C000ED2A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACD4A2482F021C1C000ED2A9 /* Make_Bike_SmartUITests.swift in Sources */,
+				ACD4A24A2F021C1C000ED2A9 /* Make_Bike_SmartUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ACD4A23B2F021C1C000ED2A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACD4A2272F021C1B000ED2A9 /* Make Bike Smart */;
+			targetProxy = ACD4A23A2F021C1C000ED2A9 /* PBXContainerItemProxy */;
+		};
+		ACD4A2452F021C1C000ED2A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACD4A2272F021C1B000ED2A9 /* Make Bike Smart */;
+			targetProxy = ACD4A2442F021C1C000ED2A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		ACD4A24B2F021C1C000ED2A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ACD4A24C2F021C1C000ED2A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		ACD4A24E2F021C1C000ED2A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Make Bike Smart/Make_Bike_Smart.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Make Bike Smart/Preview Content\"";
+				DEVELOPMENT_TEAM = 3WF2PAAV98;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "twotoque.Make-Bike-Smart";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		ACD4A24F2F021C1C000ED2A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Make Bike Smart/Make_Bike_Smart.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Make Bike Smart/Preview Content\"";
+				DEVELOPMENT_TEAM = 3WF2PAAV98;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "twotoque.Make-Bike-Smart";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		ACD4A2512F021C1C000ED2A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3WF2PAAV98;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "twotoque.Make-Bike-SmartTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Make Bike Smart.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Make Bike Smart";
+			};
+			name = Debug;
+		};
+		ACD4A2522F021C1C000ED2A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3WF2PAAV98;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "twotoque.Make-Bike-SmartTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Make Bike Smart.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Make Bike Smart";
+			};
+			name = Release;
+		};
+		ACD4A2542F021C1C000ED2A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3WF2PAAV98;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "twotoque.Make-Bike-SmartUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Make Bike Smart";
+			};
+			name = Debug;
+		};
+		ACD4A2552F021C1C000ED2A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3WF2PAAV98;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "twotoque.Make-Bike-SmartUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Make Bike Smart";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ACD4A2232F021C1B000ED2A9 /* Build configuration list for PBXProject "Make Bike Smart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACD4A24B2F021C1C000ED2A9 /* Debug */,
+				ACD4A24C2F021C1C000ED2A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACD4A24D2F021C1C000ED2A9 /* Build configuration list for PBXNativeTarget "Make Bike Smart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACD4A24E2F021C1C000ED2A9 /* Debug */,
+				ACD4A24F2F021C1C000ED2A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACD4A2502F021C1C000ED2A9 /* Build configuration list for PBXNativeTarget "Make Bike SmartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACD4A2512F021C1C000ED2A9 /* Debug */,
+				ACD4A2522F021C1C000ED2A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACD4A2532F021C1C000ED2A9 /* Build configuration list for PBXNativeTarget "Make Bike SmartUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACD4A2542F021C1C000ED2A9 /* Debug */,
+				ACD4A2552F021C1C000ED2A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ACD4A2202F021C1B000ED2A9 /* Project object */;
+}
