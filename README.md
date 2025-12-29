@@ -4,6 +4,14 @@
 
 A side project to experiment with C++, its interactions with a machine learning model, and its relations with an Rasp Pi Pico microcontroller with the hope to make my bike smarter (resistance depending on my past Strava rides and map geography)!
 
+## Machine Learning Model (beta)
+![Wokwi Diagram](./modeltest.png)
+The machine learning model acts as a personalized digital coach that translates your  effort into mechanical resistance on the wheel. The model analyzes my old Strava ride data (heart rate only, that doesn't include watts) as well as running data (which includes both heart rate and watts).
+
+During a live ride, it takes four real-time inputs: your heart rate (through healthkit?), current wheel speed (determined by a magnetic hall effect sensor, with a 38cm diameter wheel distance), time elapsed, and workout mode (0 = long distance, 1 = HIIT). This then processes them through a neural network that has "learned" your specific fitness profile. The system tightens or loosens based on whether your body is warming up, sprinting in HIIT mode, or showing signs of fatigue.
+
+The model can be found on `bike_prediction_model.tflite` and functions to fetch data through the Strava API, build the model, and test the model can be found in the `/ml-model` page. 
+
 ## Hardware
 - **Microcontroller:** Raspberry Pi Pico
 - **Cadence Sensor:** Hall Effect Sensor (connected to GP2)
