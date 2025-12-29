@@ -14,6 +14,7 @@
 		ACD4A23E2F021C1C000ED2A9 /* Make_Bike_SmartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD4A23D2F021C1C000ED2A9 /* Make_Bike_SmartTests.swift */; };
 		ACD4A2482F021C1C000ED2A9 /* Make_Bike_SmartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD4A2472F021C1C000ED2A9 /* Make_Bike_SmartUITests.swift */; };
 		ACD4A24A2F021C1C000ED2A9 /* Make_Bike_SmartUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD4A2492F021C1C000ED2A9 /* Make_Bike_SmartUITestsLaunchTests.swift */; };
+		ACD4A25B2F021FD6000ED2A9 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD4A25A2F021FD6000ED2A9 /* HealthKitManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		ACD4A2432F021C1C000ED2A9 /* Make Bike SmartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Make Bike SmartUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD4A2472F021C1C000ED2A9 /* Make_Bike_SmartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Make_Bike_SmartUITests.swift; sourceTree = "<group>"; };
 		ACD4A2492F021C1C000ED2A9 /* Make_Bike_SmartUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Make_Bike_SmartUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ACD4A25A2F021FD6000ED2A9 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				ACD4A22F2F021C1C000ED2A9 /* Assets.xcassets */,
 				ACD4A2312F021C1C000ED2A9 /* Make_Bike_Smart.entitlements */,
 				ACD4A2322F021C1C000ED2A9 /* Preview Content */,
+				ACD4A25A2F021FD6000ED2A9 /* HealthKitManager.swift */,
 			);
 			path = "Make Bike Smart";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				ACD4A22E2F021C1B000ED2A9 /* ContentView.swift in Sources */,
 				ACD4A22C2F021C1B000ED2A9 /* Make_Bike_SmartApp.swift in Sources */,
+				ACD4A25B2F021FD6000ED2A9 /* HealthKitManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +423,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app uses your heart rate data to automatically adjust bike resistance";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -459,6 +464,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app uses your heart rate data to automatically adjust bike resistance";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

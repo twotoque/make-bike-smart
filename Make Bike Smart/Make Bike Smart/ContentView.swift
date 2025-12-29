@@ -2,9 +2,9 @@ import SwiftUI
 import HealthKit
 
 struct ContentView: View {
-    // simulated data
+    @StateObject var hkManager = HealthKitManager()
+    
     @State private var speed: Double = 0.0
-    @State private var heartRate: Int = 0
     @State private var servoAngle: Double = 0.0
     @State private var isConnected: Bool = false
     @State private var workoutMode: String = "Long Distance"
@@ -16,14 +16,18 @@ struct ContentView: View {
             VStack(spacing: 30) {
                 HStack {
                     Text("Make Bike Smart by Derek Song")
-                        .font(.system(size: 24))
-                    Spacer()
-                    Circle()
-                        .frame(width: 12, height: 12)
-                        .foregroundColor(isConnected ? .green : .red)
-                    Text(isConnected ? "CONNECTED" : "DISCONNECTED")
-                        .font(.caption2)
+                        .font(.system(size: 18)) // Smaller font to fit button
                         .bold()
+                    
+                    Spacer()
+                    
+                    Button(action: { hkManager.requestAuthorization() }) {
+                        Text(hkManager.isAuthorized ? "HR Active" : "Connect HR")
+                            .font(.caption)
+                            .bold()
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(hkManager.isAuthorized ? .green : .blue)
                 }
                 .padding(.horizontal)
 
@@ -37,7 +41,8 @@ struct ContentView: View {
                 .padding(.vertical, 40)
 
                 HStack(spacing: 20) {
-                    DataCard(title: "HEART RATE", value: "\(heartRate)", unit: "BPM", icon: "heart.fill", color: .red)
+                    // 3. Update DataCard to use hkManager.currentHR
+                    DataCard(title: "HEART RATE", value: "\(hkManager.currentHR)", unit: "BPM", icon: "heart.fill", color: .red)
                     DataCard(title: "SERVO ANGLE", value: "\(Int(servoAngle))", unit: "DEGREES", icon: "gearshape.fill", color: .blue)
                 }
                 .padding(.horizontal)
@@ -55,24 +60,32 @@ struct ContentView: View {
                     Text("DEBUG SIMULATOR").font(.caption).foregroundColor(.secondary)
                     HStack {
                         Button("Inc. Speed") { speed += 0.5; updateServo() }
-                        Button("Inc. HR") { heartRate += 5; updateServo() }
-                        Button("Reset") { speed = 0; heartRate = 70; updateServo() }
+                        Button("Inc. HR") {
+                            if hkManager.currentHR == 0 { hkManager.currentHR = 70 }
+                            hkManager.currentHR += 5
+                            updateServo()
+                        }
+                        Button("Reset") { speed = 0; hkManager.currentHR = 0; updateServo() }
                     }
                     .buttonStyle(.bordered)
                 }
                 .padding()
             }
         }
+        .onChange(of: hkManager.currentHR) { _ in
+            updateServo()
+        }
     }
     
     func updateServo() {
-        let predictedWatts = Double(heartRate - 60) * 1.8
+        let activeHR = hkManager.currentHR > 0 ? Double(hkManager.currentHR) : 70.0
+        
+        let predictedWatts = (activeHR - 60) * 1.8
         let multiplier = (workoutMode == "HIIT" ? 1.3 : 1.0)
         let angle = (predictedWatts / (speed + 0.1)) * 2.2
         servoAngle = min(max(angle * multiplier, 0), 180)
     }
 }
-
 struct DataCard: View {
     var title: String
     var value: String
@@ -106,3 +119,4 @@ struct DataCard: View {
         .cornerRadius(15)
     }
 }
+
