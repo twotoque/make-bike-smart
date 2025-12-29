@@ -21,14 +21,23 @@ struct ContentView: View {
                     
                     Spacer()
                     
-                    Button(action: { hkManager.requestAuthorization() }) {
-                        Text(hkManager.isAuthorized ? "HR Active" : "Connect HR")
-                            .font(.caption)
-                            .bold()
+                    VStack(alignment: .trailing) {
+                        Button(action: { hkManager.requestAuthorization() }) {
+                            Text(hkManager.isAuthorized ? "HR Active" : "Connect HR")
+                                .font(.caption)
+                                .bold()
+                        }
+                        .buttonStyle(.borderedProminent)
+                        
+                        // Status Label
+                        Text(hkManager.statusMessage)
+                            .font(.system(size: 8))
+                            .foregroundColor(.secondary)
                     }
                     .buttonStyle(.borderedProminent)
                     .tint(hkManager.isAuthorized ? .green : .blue)
                 }
+                
                 .padding(.horizontal)
 
                 VStack {
