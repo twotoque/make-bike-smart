@@ -1,3 +1,11 @@
+//
+//  ContentView 2.swift
+//  Make Bike Smart
+//
+//  Created by Derek Song on 2025-12-30.
+//
+
+
 import SwiftUI
 import HealthKit
 
@@ -10,6 +18,7 @@ struct ContentView: View {
     @State private var debugMode: Bool = false
     @State private var debugHR: Int = 70
     
+    // Use either real HR or debug HR
     private var displayHR: Int {
         debugMode ? debugHR : hkManager.currentHR
     }
@@ -32,7 +41,7 @@ struct ContentView: View {
                     Spacer()
                     
                     VStack(alignment: .trailing) {
-                        Button(action: {
+                        Button(action: { 
                             hkManager.requestAuthorization()
                             debugMode = false  // Exit debug mode when connecting
                         }) {
@@ -68,17 +77,17 @@ struct ContentView: View {
                 // data
                 HStack(spacing: 20) {
                     DataCard(
-                        title: "HEART RATE",
-                        value: "\(displayHR)",
-                        unit: debugMode ? "DEBUG" : "BPM",
-                        icon: "heart.fill",
+                        title: "HEART RATE", 
+                        value: "\(displayHR)", 
+                        unit: debugMode ? "DEBUG" : "BPM", 
+                        icon: "heart.fill", 
                         color: debugMode ? .orange : .red
                     )
                     DataCard(
-                        title: "SERVO ANGLE",
-                        value: "\(Int(servoAngle))",
-                        unit: "DEGREES",
-                        icon: "gearshape.fill",
+                        title: "SERVO ANGLE", 
+                        value: "\(Int(servoAngle))", 
+                        unit: "DEGREES", 
+                        icon: "gearshape.fill", 
                         color: .blue
                     )
                 }
@@ -106,9 +115,9 @@ struct ContentView: View {
                     
                     if debugMode {
                         HStack {
-                            Button("Inc. Speed") {
+                            Button("Inc. Speed") { 
                                 speed += 0.5
-                                updateServo()
+                                updateServo() 
                             }
                             Button("Inc. HR") {
                                 debugHR = (debugHR == 0) ? 70 : debugHR + 5
@@ -129,7 +138,7 @@ struct ContentView: View {
                 }
                 .padding()
             }
-        } 
+        }
         .onChange(of: hkManager.currentHR) {
             if !debugMode {
                 updateServo()

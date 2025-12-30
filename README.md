@@ -12,14 +12,26 @@ Traditional stationary bikes, specifically models like my **ProForm 505 SPX**, r
 
 This tool aims to solve that by using an external motor to resist the flywheel. Despite the bike having data like wattage, we infered running data as well as past running data to get distance via a magnetic Hall effect sensor that tracks every rotation of the 36.5 cm diameter flywheel. By combining this data with a neural betwork trained on historical Strava erformance, the system eliminates the need for manual adjustments and provides a fully automated, data-driven cycling experience.
 
+## Architecture 
+![Architecture](./arch.png)
+
+The aim is that a Swift app hosted on the iPad or iPhone will connect to the Raspberry Pi Pico through Bluetooth. This app will also connect to the HealthKit package to find your heart rate. The Pico (discussed further below) will the speed through the magnetic hall sensor. This information and heart rate will be fed to the machine learning model (explained below) and then the appropriate angle of resistance determined and be sent back to the Pico. 
+
+## Software (Swift App)
+![Swift App](./swiftapp.png)
+
+A Swift powered app will be the main user interface to control the machine. Right now it will show live heart rate if there is a active workout session. It will also ask the user if the resistance is good, too easy, or too hard. This will also contain the machine learning model (explained below) to calculate best input. 
+
 ## Machine Learning Model (beta)
-![Wokwi Diagram](./modeltest.png)
+![ML test](./modeltest.png)
 
 The machine learning model acts as a personalized digital coach that translates your  effort into mechanical resistance on the wheel. The model analyzes my old Strava ride data (heart rate only, that doesn't include watts) as well as running data (which includes both heart rate and watts).
 
-During a live ride, it takes four real-time inputs: your heart rate (through healthkit?), current wheel speed (determined by a magnetic hall effect sensor, with a 38cm diameter wheel distance), time elapsed, and workout mode (0 = long distance, 1 = HIIT). This then processes them through a neural network that has "learned" your specific fitness profile. The system tightens or loosens based on whether your body is warming up, sprinting in HIIT mode, or showing signs of fatigue.
+During a live ride, it takes four real-time inputs: your heart rate (through healthkit?), current wheel speed (determined by a magnetic hall effect sensor, with a 38cm diameter wheel distance), time elapsed, and workout mode (0 = long distance, 1 = HIIT). This then processes them through a neural network that has "learned" your specific fitness profile. The system tightens or loosens based on whether your body is warming up, sprinting in HIIT mode, or showing signs of fatigue. Additionally, it will also take in feedback if the given resistance is good, too hard, or too easy. 
 
 The model can be found on `bike_prediction_model.tflite` and functions to fetch data through the Strava API, build the model, and test the model can be found in the `/ml-model` page. 
+
+
 
 ## Hardware
 - **Microcontroller:** Raspberry Pi Pico
