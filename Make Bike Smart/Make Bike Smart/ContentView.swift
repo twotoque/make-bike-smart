@@ -9,6 +9,7 @@ struct ContentView: View {
     @State private var workoutMode: String = "Long Distance"
     @State private var debugMode: Bool = false
     @State private var debugHR: Int = 70
+    @State private var feedbackMessage: String = ""
     
     private var displayHR: Int {
         debugMode ? debugHR : hkManager.currentHR
@@ -92,6 +93,53 @@ struct ContentView: View {
                 .pickerStyle(.segmented)
                 .padding(.horizontal)
 
+                // feedback buttons
+                VStack(spacing: 8) {
+                    GeometryReader { geometry in
+                        HStack(spacing: 8) {
+                            Button(action: {
+                                feedbackMessage = "Resistance is too easy"
+                            }) {
+                                Image(systemName: "arrow.down.circle.fill")
+                                Text("Resistance is too easy")
+                            }
+                            .buttonStyle(.bordered)
+                            .tint(.orange)
+                            .frame(width: geometry.size.width * 0.3)
+                            
+                            Button(action: {
+                                feedbackMessage = "Resistance is good"
+                            }) {
+                                HStack {
+                                    Image(systemName: "checkmark.circle.fill")
+                                    Text("Resistance is good")
+                                }
+                            }
+                            .buttonStyle(.bordered)
+                            .tint(.green)
+                            .frame(width: geometry.size.width * 0.4)
+                            
+                            Button(action: {
+                                feedbackMessage = "Resistance is too hard"
+                            }) {
+                                Image(systemName: "arrow.up.circle.fill")
+                                Text("Resistance is too hard")
+                            }
+                            .buttonStyle(.bordered)
+                            .tint(.red)
+                            .frame(width: geometry.size.width * 0.3)
+                        }
+                    }
+                    .frame(height: 40)
+                    
+                    if !feedbackMessage.isEmpty {
+                        Text(feedbackMessage)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                }
+                .padding(.horizontal)
+
                 Spacer()
 
                 // debug
@@ -129,7 +177,7 @@ struct ContentView: View {
                 }
                 .padding()
             }
-        } 
+        }
         .onChange(of: hkManager.currentHR) {
             if !debugMode {
                 updateServo()
