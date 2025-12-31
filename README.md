@@ -1,5 +1,4 @@
-![Wokwi Diagram](./dec28.png)
-
+![Cover image](./cover.png)
 # Smart Bike Resistance Project
 
 A side project to experiment with C++, its interactions with a machine learning model, and its relations with an Rasp Pi Pico microcontroller with the hope to make my bike smarter (resistance depending on my past Strava rides and map geography)!
@@ -34,6 +33,7 @@ The model can be found on `bike_prediction_model.tflite` and functions to fetch 
 
 
 ## Hardware
+![Wokwi Diagram](./dec28.png)
 - **Microcontroller:** Raspberry Pi Pico
 - **Cadence Sensor:** Hall Effect Sensor (connected to GP2)
 - **Resistance Actuator:** Servo Motor (connected to GP15)

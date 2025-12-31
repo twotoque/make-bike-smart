@@ -98,21 +98,21 @@ struct ContentView: View {
                     GeometryReader { geometry in
                         HStack(spacing: 8) {
                             Button(action: {
-                                feedbackMessage = "Resistance is too easy"
+                                feedbackMessage = "Too easy"
                             }) {
                                 Image(systemName: "arrow.down.circle.fill")
-                                Text("Resistance is too easy")
+                                Text("Easy")
                             }
                             .buttonStyle(.bordered)
                             .tint(.orange)
                             .frame(width: geometry.size.width * 0.3)
                             
                             Button(action: {
-                                feedbackMessage = "Resistance is good"
+                                feedbackMessage = "Just right"
                             }) {
                                 HStack {
                                     Image(systemName: "checkmark.circle.fill")
-                                    Text("Resistance is good")
+                                    Text("Just right")
                                 }
                             }
                             .buttonStyle(.bordered)
@@ -120,10 +120,10 @@ struct ContentView: View {
                             .frame(width: geometry.size.width * 0.4)
                             
                             Button(action: {
-                                feedbackMessage = "Resistance is too hard"
+                                feedbackMessage = "Too hard"
                             }) {
                                 Image(systemName: "arrow.up.circle.fill")
-                                Text("Resistance is too hard")
+                                Text("Hard")
                             }
                             .buttonStyle(.bordered)
                             .tint(.red)

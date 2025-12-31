@@ -1,0 +1,13 @@
+[
+  {
+    "timestamp": "2025-12-31T02:15:57.188975",
+    "scenario": "Warmup (Steady)",
+    "hr": 105,
+    "speed": 4.0,
+    "time": 120,
+    "mode": "Long",
+    "angle_before": 36.77,
+    "angle_after": 35.39,
+    "difference": -1.38
+  }
+]
