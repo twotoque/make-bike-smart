@@ -1,60 +1,78 @@
 ![Cover image](./cover.png)
 # Smart Bike Resistance Project
 
-A side project to experiment with C++, its interactions with a machine learning model, and its relations with an Rasp Pi Pico microcontroller with the hope to make my bike smarter (resistance depending on my past Strava rides and map geography)!
+This project aims to make traditional stationary bikes smarter with dynamic resistance. The main objective of this project is to experiment with C++ and its interactions with a machine learning model on TensorFlow/Python with an active feedback loop. The goal is to connect these systems with a Raspberry Pi Pico microcontroller to make my bike smarter by adjusting resistance based on my past Strava rides.
 
 ## The Problem
-Traditional stationary bikes, specifically models like my **ProForm 505 SPX**, rely on a manual tension knob that requires constant human intervention to adjust workout intensity. This creates a disconnected training experience where the resistance does not respond to the rider's actual fatigue levels, specific training goals such as HIIT or endurance, as well as past Strava rides. 
-
+Traditional stationary bikes like my ProForm 505 SPX rely on a manual tension knob that requires constant human intervention to adjust workout intensity. This creates a disconnected training experience where the resistance does not respond to actual fatigue levels, specific training goals like HIIT or endurance, or past Strava performance. 
 
 ![Bike Magnet](./magneticdiameter.jpg)
 
-This tool aims to solve that by using an external motor to resist the flywheel. Despite the bike having data like wattage, we infered running data as well as past running data to get distance via a magnetic Hall effect sensor that tracks every rotation of the 36.5 cm diameter flywheel. By combining this data with a neural betwork trained on historical Strava erformance, the system eliminates the need for manual adjustments and provides a fully automated, data-driven cycling experience.
+This tool solves the problem by using an external motor to resist the flywheel. Although the bike provides some data, I inferred data from past activities to calculate distance via a magnetic Hall effect sensor that tracks every rotation of the 36.5 cm diameter flywheel. By combining this with a neural network trained on historical Strava performance, the system provides a fully automated and data driven cycling experience.
 
 ## Architecture 
 ![Architecture](./arch.png)
 
-The aim is that a Swift app hosted on the iPad or iPhone will connect to the Raspberry Pi Pico through Bluetooth. This app will also connect to the HealthKit package to find your heart rate. The Pico (discussed further below) will the speed through the magnetic hall sensor. This information and heart rate will be fed to the machine learning model (explained below) and then the appropriate angle of resistance determined and be sent back to the Pico. 
+A Swift app hosted on an iPad or iPhone connects to the Raspberry Pi Pico through Bluetooth. This app also connects to the HealthKit package to monitor heart rate. The Pico tracks speed through the magnetic hall sensor. This information is fed to a machine learning model to determine the appropriate angle of resistance which is then sent back to the Pico. 
+
+### Tech Stack 
+
+#### Software & Mobile Development
+* Swift: The primary language for the project, used to build the user interface and manage the core logic on iOS and iPadOS.
+
+  * HealthKit: A framework integrated into the Swift app to access real-time biometric data, specifically the user's heart rate, to inform the resistance model.
+
+  * Bluetooth: The communication protocol used to bridge the gap between the mobile application and the Raspberry Pi Pico.
+
+#### Machine Learning
+* Python: Used for data engineering tasks, such as interfacing with the Strava API to fetch historical activity data and training the neural network.
+
+* TensorFlow Lite: The model is converted and deployed as a lightweight file to perform on-device inference within the Swift app for real time resistance adjustments.
+
+#### Embedded Systems & Hardware
+* C++: powers the Raspberry Pi Pico via the Arduino framework to handle hardware interrupts and low level peripheral control.
+
+* Raspberry Pi Pico: The central microcontroller that processes sensor data and physically controls the bike's mechanical resistance.
+
+  * Hall Effect Sensor: A magnetic sensor used to track flywheel rotations, allowing the system to calculate speed and distance.
+
+  * Servo Motor: The mechanical actuator that physically adjusts the bike's resistance based on the target angles calculated by the machine learning model.
 
 ## Software (Swift App)
 ![Swift App](./swiftapp.png)
 
-A Swift powered app will be the main user interface to control the machine. Right now it will show live heart rate if there is a active workout session. It will also ask the user if the resistance is good, too easy, or too hard. This will also contain the machine learning model (explained below) to calculate best input. 
+A Swift powered app serves as the main user interface to control the machine. It currently displays live heart rate during active workout sessions. It also prompts the user to indicate if the resistance is good, too easy, or too hard. The app contains the machine learning model used to calculate the best input. 
 
 ## Machine Learning Model (beta)
 ![ML test](./modeltest.png)
 
-The machine learning model acts as a personalized digital coach that translates your  effort into mechanical resistance on the wheel. The model analyzes my old Strava ride data (heart rate only, that doesn't include watts) as well as running data (which includes both heart rate and watts).
+The machine learning model acts as a personalized digital coach that translates effort into mechanical resistance on the wheel. The model analyzes old Strava ride data and running data to understand fitness profiles.
 
-During a live ride, it takes four real-time inputs: your heart rate (through healthkit?), current wheel speed (determined by a magnetic hall effect sensor, with a 38cm diameter wheel distance), time elapsed, and workout mode (0 = long distance, 1 = HIIT). This then processes them through a neural network that has "learned" your specific fitness profile. The system tightens or loosens based on whether your body is warming up, sprinting in HIIT mode, or showing signs of fatigue. Additionally, it will also take in feedback if the given resistance is good, too hard, or too easy. 
-
-The model can be found on `bike_prediction_model.tflite` and functions to fetch data through the Strava API, build the model, and test the model can be found in the `/ml-model` page. 
-
-
+During a live ride, it takes four real time inputs: heart rate from HealthKit, current wheel speed from the magnetic hall effect sensor, time elapsed, and workout mode. The system adjusts based on whether the body is warming up, sprinting, or showing signs of fatigue. It also incorporates feedback on whether the resistance feels correct The model is stored in bike_prediction_model.tflite, while scripts to fetch Strava API data and build the model are in the /ml-model directory.
 
 ## Hardware
 ![Wokwi Diagram](./dec28.png)
-- **Microcontroller:** Raspberry Pi Pico
-- **Cadence Sensor:** Hall Effect Sensor (connected to GP2)
-- **Resistance Actuator:** Servo Motor (connected to GP15)
+* **Microcontroller:** Raspberry Pi Pico 
+* **Cadence Sensor:** Hall Effect Sensor connected to GP2 
+* **Resistance Actuator:** Servo Motor connected to GP15
 
 ## Pin Definitions
 | Component | Pico Pin | Function |
 | :--- | :--- | :--- |
-| **Hall Sensor** | GP2 | Interrupt-driven pulse counting to track rotations. |
+| **Hall Sensor** | GP2 | Interrupt driven pulse counting to track rotations. |
 | **Servo Motor** | GP15 | Dynamic resistance control via PWM signals. |
 
 ## System Architecture
 
-The firmware utilizes an **Asynchronous Logic** model to ensure the bike's "speedometer" and "resistance" are independent:
+The firmware utilizes an asynchronous logic model to ensure the speed tracking and resistance control remain independent:
 
-1. **Tracking (Hardware Interrupt):** The Hall sensor triggers a hardware interrupt on every rotation, incrementing a `totalCycles` counter immediately.
-2. **Middleware Output:** The Pico sends raw data to the computer over Serial with the prefix `DATA:`.
-3. **Dynamic Control (Inbound Serial):** The Pico listens for resistance updates from the middleware. Using `Serial.available()`, it receives target angles (0-180) and updates the servo position without pausing the rotation counter.
+1. **Tracking:** The Hall sensor triggers a hardware interrupt on every rotation to increment a totalCycles counter immediately.
+2. **Middleware Output:** The Pico sends raw data to the computer over Serial with the prefix DATA:.
+3. **Dynamic Control:** The Pico listens for resistance updates from the middleware. It receives target angles between 0 and 180 and updates the servo position without pausing the rotation counter.
 
-## How to Build
+## How to Build Hardware
 
 ### Requirements
-- **Language:** C++ (Arduino Framework)
-- **IDE:** Wokwi or Arduino IDE
-- **Libraries:** `Servo.h` (Standard Raspberry Pi Pico Servo library)
+* **Language:** C++ using the Arduino Framework
+* **IDE:** Wokwi or Arduino IDE 
+* **Libraries:** Servo.h for the Raspberry Pi Pico 
